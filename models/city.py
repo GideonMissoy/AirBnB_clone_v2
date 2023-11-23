@@ -9,7 +9,10 @@ from sqlalchemy.orm import relationship
 
 
 class City(BaseModel, Base):
-    """ The city class, contains state ID and name """
+    """
+    The city class, contains state ID and name.
+    Inherits from SQLAlchemy Base and links to the MySQL table cities.
+    """
     __tablename__ = "cities"
     state_id = Column(String(60), ForeignKey("states.id"), nullable=False)
     name = Column(String(128), nullable=False)
