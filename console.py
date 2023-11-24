@@ -52,7 +52,8 @@ class HBNBCommand(cmd.Cmd):
 
             kwargs = {}
             for i in range(1, len(my_list)):
-                key, value = tuple(my_list[i].split("="))
+                if len(my_list[i].split("=")) >= 2:
+                    key, value = tuple(my_list[i].split("="))
                 if value[0] == '"':
                     value = value.strip('"').replace("_", " ")
                 else:
